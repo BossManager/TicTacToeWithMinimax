@@ -43,7 +43,7 @@ public class Minimax {
 			board_variation[getX(move)][getY(move)] = player?'O':'X';
 			int score = minimax(board_variation, maxDepht, !player);
 
-			if(score*(10-maxDepht)>=best_score) {
+			if(score>=best_score) {
 				best_move = move;
 				best_score = score;
 				
@@ -63,7 +63,7 @@ public class Minimax {
 
 			int score = minimax(board_variation, maxDepht, !player);
 
-			if(score*maxDepht<=best_score) {
+			if(score<=best_score) {
 				best_move = move;
 				best_score = score;
 				
